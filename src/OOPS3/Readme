@@ -1,0 +1,82 @@
+What is Abstraction?
+ -> Abstraction means showing only the important information and hiding the unnecessary details.
+
+ Why do we use Abstraction?
+ ✔ Makes code simple
+ ✔ Hides complexity
+ ✔ Increases security (only necessary actions allowed)
+ ✔ Helps in maintaining and updating code easily
+
+Abstract Methode is a body-less which does not have its own implementation nut everyone who is extending from
+abstract class had to implement this methode
+
+example
+abstract class Animal {
+    abstract void sound();  // no body -> hiding details
+
+    void sleep() {
+        System.out.println("Sleeping...");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    void sound() {
+        System.out.println("Bark");
+    }
+}
+
+
+-------------------------------------------------------------
+
+What is an Interface?
+- An interface is like a contract in Java.
+- It tells what a class must do, but not how to do it.
+- It only contains method names (signatures), and the class that uses it must provide the actual implementation.
+
+Why do we use Interfaces?
+✔ To achieve 100% abstraction
+✔ To follow multiple inheritance (Java doesn’t support multiple inheritance with classes, but with interfaces it does)
+✔ To define rules/standards for classes
+
+we cannot define a constructor in an interface and we cannot define instance variable in an interface
+
+
+Example -:
+interface Camera {
+    void takePhoto();
+    default void save(){
+      save photos;
+    }
+}
+
+interface MusicPlayer {
+    void playMusic();
+}
+
+class Smartphone implements Camera, MusicPlayer {
+    public void takePhoto() {
+        System.out.println("Photo Clicked");
+    }
+
+    public void playMusic() {
+        System.out.println("Playing Music");
+    }
+}
+
+-----------------------------------------------------------------------------
+Key Rules of Interface
+
+✔ Methods are public abstract by default
+✔ Variables are public static final (constant)
+✔ A class uses implements to use an interface
+✔ A class must implement all methods in the interface
+✔ One class can implement multiple interfaces
+
+What is a Default Method in an Interface?
+- A default method is a method in an interface that has a body (implementation).
+
+we can extends interface with another interface
+multiple implementation of an interface to a class is allowed.
+
+---------------------------------------------------------------------------------

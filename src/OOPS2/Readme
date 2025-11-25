@@ -1,0 +1,110 @@
+---------------------------------------------------------------------------
+An instance variable is a variable that is associated with an instance of a class. Unlike static variables,
+instance variables are defined in a class but outside any method and are specific to each object of that class.
+This means that each object has its own copy of an instance variable, so changes to the variable in one
+object do not affect other objects. Instance variables are commonly used to store the state of an object.
+
+---------------------------------------------------------------------------
+Inheritance
+---------------------------------------------------------------------------
+Inheritance allows one class to acquire the properties and methods of another class.
+
+👉 The class that is inherited from = Parent/Super Class
+👉 The class that inherits = Child/Sub Class
+
+This helps in:
+
+Code reusability
+
+Reducing duplication
+
+Building real- world relationships (Car → SportsCar)
+
+Types of Inheritance in Java
+
+---------------------------------------------------------------------------
+Java supports:
+
+Single inheritance
+
+Multilevel inheritance
+
+Hierarchical inheritance
+
+(Java does NOT support multiple inheritance using classes.)
+
+---------------------------------------------------------------------------
+
+What is super keyword?
+
+super is used to refer to immediate parent class.
+
+You use super for:
+
+Calling parent class constructor
+
+Accessing parent class variables
+
+Calling parent class methods
+
+---------------------------------------------------------------------------------
+
+How super is used here?
+Usage	                     Example	                Meaning
+Call parent constructor	     super(brand, speed)	    Initializes parent fields
+Access parent method	     super.display()	        Runs Car's display()
+Access parent variables	     super.brand (if needed)	Gets parent’s value
+
+
+-----------------------------------------------------------------------------------
+
+Programming to an Interface rather than a Concrete Implementation” — one of the most important OOP principles.
+
+instead of AdvancedCar ad = new AdvancedCar(3, "Automatic", 4,4) we did this
+
+👉 car advanceCar = new AdvancedCar(3, "Automatic", 4,4);
+
+-----------------------------------------------------------------------------------
+
+| Access Modifier           | Accessible Within Same Class | Same Package | Subclass (Different Package) | Other Packages | Keyword Used |
+| ------------------------- | ---------------------------- | ------------ | ---------------------------- | -------------- | ------------ |
+| **public**                | ✔ Yes                        | ✔ Yes        | ✔ Yes                        | ✔ Yes          | `public`     |
+| **protected**             | ✔ Yes                        | ✔ Yes        | ✔ Yes                        | ❌ No          | `protected`  |
+| **default** (no modifier) | ✔ Yes                        | ✔ Yes        | ❌ No                         | ❌ No         | *(none)*     |
+| **private**               | ✔ Yes                        | ❌ No         | ❌ No                         | ❌ No        | `private`    |
+
+
+-----------------------------------------------------------------------------------
+Runtime Polymorphism (Dynamic Polymorphism)
+
+Runtime polymorphism occurs when a method is called based on the object's actual type at runtime, not the reference type.
+
+👉 Achieved using method overriding
+👉 Decided by JVM during program execution (runtime)
+👉 Supports flexibility and extensibility
+
+
+Dynamic Method Dispatch
+Dynamic Method Dispatch is the mechanism that enables runtime polymorphism.
+
+It means: When a parent class reference points to a child class object, the overridden method of the child class is executed.
+
+------------------------------------------------------------------------------------------------------------------
+
+constructor overloading and methode overloading fall under compile time polymorphism
+
+
+------------------------------------------------------------------------------------------------------------------
+
+| Feature       | Compile-time Polymorphism                         | Runtime Polymorphism        |
+| ------------- | ------------------------------------------------- | --------------------------- |
+| Also called   | Early binding                                     | Late binding                |
+| Decision time | Compile time                                      | Runtime                     |
+| Achieved by   | Method **Overloading**                            | Method **Overriding**       |
+| Inheritance   | Not required                                      | Required                    |
+| Parameters    | Must be different                                 | Must be same                |
+| Return type   | Can be same or different                          | Must be same (or covariant) |
+| Speed         | Faster                                            | Slightly slower             |
+| Flexibility   | Less flexible                                     | More flexible               |
+| Example       | `add(int a, int b)` vs `add(int a, int b, int c)` | Parent ref → Child object   |
+

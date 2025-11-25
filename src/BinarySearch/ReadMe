@@ -1,0 +1,32 @@
+Binary Search
+
+Binary Search is a fast searching algorithm used to find an element in a sorted array.
+
+Key Idea
+Instead of checking each element one by one (like Linear Search), Binary Search divides the search space into half every time.
+
+Conditions
+The array must be sorted (ascending or descending).
+
+
+Time Complexity: O(log n) (very fast)
+Space Complexity: O(1)
+
+---------------------------------------------------------------------
+How it works (simple steps)
+
+Start with two pointers:
+ -->  low = 0
+ -->  high = array.length - 1
+
+Find the middle index:
+ -->  mid = (low + high) / 2
+
+Compare the middle element with the target:
+ -->  If arr[mid] == target, element is found.
+ -->  If arr[mid] < target, search in right half → low = mid + 1
+ -->  If arr[mid] > target, search in left half → high = mid - 1
+
+Repeat until low > high.
+
+---------------------------------------------------------------------
